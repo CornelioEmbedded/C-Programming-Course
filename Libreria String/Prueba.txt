@@ -1,0 +1,111 @@
+Se han implementado muchos buses y protocolos estándares y propietarios
+para comunicar el sistema de adquisición de datos con la computadora.
+Cuando se habla del término buses, se hace referencia a los conectores de
+los equipos de cómputo donde se insertan las tarjetas de adquisición de
+datos. Ejemplos de estos buses son el bus ISA, PCI, PCMCIA, etcétera.
+El término protocolo de
+comunicación define el tipo de
+enlace de comunicación con el que
+se va a conectar un sistema externo
+de adquisición de datos con una
+computadora, esta comunicación
+puede llevarse a cabo utilizando
+algunos de los siguientes protocolos
+de comunicación: RS232, RS485, USB,
+Ethernet, etcétera.
+2.2 Buses
+A lo largo de la historia de la computadora personal se han desarrollado una
+variedad de diferentes buses, como el ISA, el PCI, el IBM Micro Channel
+Architecture (MCA), el Enhanced Industry Standard Architecture (EISA), el
+Video Electronics Standard Association (VESA) local Bus, entre otros.
+De estos buses, dos son los más populares: el ISA (Industry Standard
+Architecture) y el actual PCI (Peripheral Component Interconnect).
+Añadiremos a nuestro estudio el tratamiento del PCMCIA, que fue líder en lo
+que respecta a notebooks y laptops en sus inicios, y por supuesto, hablaremos
+del último bus para computadoras, el bus PCI Express.
+2.2.1 Bus ISA
+Este bus fue creado por IBM para la primera computadora personal que
+comercializaron.
+Inicialmente el bus ISA manejaba sólo 8 bits y 4.77 MHz, lo cual era suficiente
+para el procesador Intel 8088.
+Funcionalidades del bus ISA: el DMA (Direct Memory Access) y el PnP (Plug
+and Play) son modalidades introducidas con el bus ISA. El DMA se encarga de
+buscar áreas libres de memoria RAM sin utilizar la ayuda del CPU (Unidad
+Central de Proceso). Esto acelera el desempeño de las computadoras que
+poseen esta funcionalidad
+Si no se poseen las funcionalidades PnP, instalar una tarjeta ISA en una computadora
+puede ser una operación que entraña un cierto trabajo adicional por parte del
+operador, ya que deberá colocar manualmente los switches de las direcciones de
+I/O y el IRQ de la tarjeta. En algunos modelos de tarjeta estas operaciones se hacen
+por medio de software, pero siempre hay que verificar, desde el sistema operativo,
+que no haya conflicto entre los recursos seleccionados y otros ya habilitados.
+Cabe mencionar que aún las tarjetas DAQ más antiguas, es decir las que tienen un
+bus ISA de 8 bits, muestran un desempeño suficientemente aceptable para la
+mayoría de aplicaciones de adquisición de datos y control que normalmente no
+necesitan una velocidad de muestreo y adquisición demasiado rápidas.
+2.2.2 Bus PCI
+El bus PCI (Peripheral Component Interconnect) de 32 bits fue introducido en el
+mercado por Intel en el año 1993, con la aparición del procesador Pentium.
+También se observó en algunas versiones de los últimos modelos de tarjetas madre
+para Intel 486.
+Este bus maneja 32 bits a una velocidad de 33 MHz e incorpora mejoras sustanciales
+en las capacidades PnP. Sin necesidad de puentes o jumpers, este bus selecciona
+automáticamente las direcciones de I/O, el DMA y las IRQ, permitiendo que
+diferentes dispositivos PCI puedan compartir las interrupciones
+En las computadoras industriales la tendencia no es la misma, ya que éstas se pueden
+adquirir con backplanes diseñados tanto para ISA como para PCI, e incluso con
+todos los slots para bus ISA: 20 o 22 slots, dependiendo del modelo. Esto se debe a
+que muchos sistemas industriales conservan en la actualidad equipos con placas
+especiales con bus ISA. Estas placas resultarían inservibles si los nuevos equipos no
+dispusieran de estos slots a la hora de invertir en un nuevo modelo de computadora,
+generando un excesivo costo de recambio.
+Ésta es la razón por la que los fabricantes de computadoras industriales mantienen en
+el mercado variados modelos de backplanes permitiendo todas las combinaciones
+posibles, incluso con viejos modelos de tarjetas para bus ISA.
+2.2.3 Bus PCMCIA
+El bus PCMCIA (Personal Computer Memory Card International Association)
+introducido en las notebooks y laptops, permite la conexión en las mismas de
+tarjetas de adquisición de datos, interfaces GPIB, RS485, RS422 y cualquier otro
+periférico PCMCIA.
+En cuanto a desempeño y velocidad, el bus PCMCIA está más cerca del bus
+ISA que del bus PCI, pero añade las funcionales de PnP y de “hot swapping”.
+Esto último se refiere a la capacidad que permite conexiones y
+desconexiones sin apagar la computadora.
+No son adecuadas para estar instaladas permanentemente en ambientes
+agresivos, ya que ni la notebook ni el sistema DAQ PCMCIA están pensados para
+aplicaciones industriales donde sea necesario un sistema robusto.
+Recordemos que frecuentemente se necesitará agregar un acondicionador de
+señal. El punto débil de estas tarjetas termina siendo el cable de conexión entre la
+tarjeta y los acondicionadores o borneras. Con todos los inconvenientes antes
+mencionados y con la aparición del práctico y compacto estándar USB en las
+notebooks, es que desaparece en la notebook el PCMCIA, citándose en el
+presente texto con el fin de entender la evolución histórica de los diferentes buses
+de computadoras y notebooks.
+2.2.4 Bus PCI Express
+El bus PCI Express es el más reciente bus incorporado a los equipos de cómputo y
+está llegando a convertirse en un nuevo estándar para tarjetas de adquisición de
+datos.
+El bus PCI Express abandona la arquitectura de transferencia de datos en paralelo
+del bus PCI, por una arquitectura de transferencia de datos seriales de alta
+velocidad (2 Gbps), esto explica por qué el conector PCI Express es más pequeño
+y tiene una menor cantidad de contactos que el conector PCI.
+La máxima velocidad de transferencia de un bus PCI Express puede llegar a 32
+Gbps.
+Se pueden adquirir en el mercado una variedad de modelos de tarjetas de
+adquisición de datos con bus PCI Express
+2.3 Protocolos de comunicaciones
+Dentro de este tema se incluyen todos los protocolos de comunicaciones entre la
+computadora y los sistemas externos de adquisición de datos.
+Hablaremos en este punto sólo de los protocolos de comunicaciones estándar,
+como el RS232, RS485, RS422, GPIB (IEEE488), USB, FireWire y Ethernet.
+Los protocolos propietarios no serán tratados en este libro, por tener un espectro de
+difusión más reducido.
+2.3.1 Estándares de puertos seriales
+(RS232, RS485, RS422)
+El RS232 apareció en el mercado en 1962. Sus características iniciales eran las
+siguientes: 15 m (50 pies) de distancia máxima, 19 200 baudios (bits por
+segundo) de velocidad de transmisión máxima y conector de tipo DB-25 de
+25 pines.
+Con el transcurso del tiempo el conector migró al tipo DB-9 de 9 pines,
+manteniendo los contactos principales del antiguo conector DB-25 de 25
+pines. En el mercado se consiguen convertidores de DB-25 a DB-9.
